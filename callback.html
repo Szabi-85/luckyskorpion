@@ -1,0 +1,12 @@
+<!DOCTYPE html><html lang="hu"><head><meta charset="utf-8"><title>TikTok engedélyezés – Lucky Skorpion</title><link rel="stylesheet" href="style.css"></head><body>
+<h1>TikTok engedélyezés</h1>
+<p id="msg">Nincs kód az URL-ben.</p>
+<p>Küldd el Telegramon a botnak:</p>
+<pre id="cmd" style="background:#f3f3f3;padding:.8rem;white-space:pre-wrap;word-break:break-all"></pre>
+<script>
+var p=new URLSearchParams(location.search),c=p.get("code");
+if(c){document.getElementById("msg").textContent="Sikeres engedélyezés. Másold ki az alábbi parancsot:";
+document.getElementById("cmd").textContent="/tiktok "+c;}
+else if(p.get("error")){document.getElementById("msg").textContent="Hiba: "+p.get("error")+" – "+(p.get("error_description")||"");}
+</script>
+</body></html>
